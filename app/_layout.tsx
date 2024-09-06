@@ -34,8 +34,13 @@ export default function RootLayout() {
   const appState = useRef(AppState.currentState);
   useEffect(() => {
     const handleAppStateChange = (nextAppState: any) => {
+      console.log(appState.current)
+      if (appState.current.match(/active/)) {
+        console.log('O aplicativo está em segundo plano ou pausa.');
+        // backupDatabase();
+      }
       if (appState.current.match(/inactive|background/) && nextAppState === 'active') {
-        console.log('O aplicativo foi para o segundo plano ou pausa.');
+        console.log('O aplicativo retornou do segundo plano ou pausa.');
         // backupDatabase();
       }
       appState.current = nextAppState;

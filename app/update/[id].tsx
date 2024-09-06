@@ -16,6 +16,13 @@ import Checkbox from "expo-checkbox"
 
 type ToastType = 'success' | 'danger' | 'info' | 'warning';
 
+const options = [
+  { key: 'sim', text: 'Sim' },
+  { key: 'nao', text: 'Não' },
+  { key: 'parcial', text: 'Parcial' },
+  { key: 'parcelado', text: 'Parcelado' },
+];
+
 export default function Atualizar() {
 
   const { ref, open, close } = useModalize();
@@ -116,7 +123,7 @@ export default function Atualizar() {
         nota,
         valor,
         pago,
-        date : formattedDate,
+        date: formattedDate,
         pinned,
         cor,
         valorParcial,
@@ -331,7 +338,8 @@ export default function Atualizar() {
                   setValorParcial('0')
                 }
               }
-              } />
+              }
+                options={options} />
 
               {pago === 'Parcial' && (
                 <MaskedTextInput

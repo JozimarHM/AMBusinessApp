@@ -14,6 +14,7 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['nam
 }
 
 export default function TabLayout() {
+  
   const { biometricEnabled, loading, darkModeEnabled } = usePreferences();
   const colorScheme = darkModeEnabled ? true : useColorScheme() === 'dark';
   const headerShown = useClientOnlyValue(false, true);

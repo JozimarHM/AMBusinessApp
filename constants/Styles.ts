@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
   },
   containerSetting: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'space-around',
+    alignItems: 'center',
     padding: 1,
     gap: 16,
   },

@@ -20,6 +20,13 @@ import { mask } from "react-native-mask-text"
 
 type PagoType = 'Sim' | 'Não' | 'Parcial' | 'Parcelado';
 
+const options = [
+  { key: 'sim', text: 'Sim' },
+  { key: 'nao', text: 'Não' },
+  { key: 'parcial', text: 'Parcial' },
+  { key: 'parcelado', text: 'Parcelado' },
+];
+
 export default function AddNotas() {
 
   const { ref, open, close } = useModalize();
@@ -330,7 +337,11 @@ export default function AddNotas() {
             keyboardType="numeric"
           />
 
-          <RadioGroup title="Pago?" initialSelectedOption={pago} onChange={(selectedOption: string) => setPago(selectedOption as PagoType)} />
+          <RadioGroup 
+          title="Pago?" 
+          initialSelectedOption={pago} 
+          onChange={(selectedOption: string) => setPago(selectedOption as PagoType)}
+          options={options} />
 
 
           {pago === 'Parcial' && (
